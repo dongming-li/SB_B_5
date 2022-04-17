@@ -1,0 +1,463 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="coms309.songusoid.CreateFragment">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <!-- Used nested Linear Layouts to organize the spacing on the screen -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/ic_gutiarplayer">
+        <Spinner
+            android:id="@+id/instrumentDisplayedSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioButton0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Random"
+                        android:onClick="songAlgoSelect" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bubble"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/RadioAlgo3" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Peter Scale"
+                        android:onClick="songAlgoSelect" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="32dp"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/DefaultDescription"
+                    android:textColor="@android:color/background_dark" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/CreateSong"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CreateSong" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- A separate linear layout which will hold a pop up menu after creating a song
+    needs to be nested in a full screen relative layout in order to center on the screen-->
+    <RelativeLayout
+        android:id="@+id/CreatePopUp1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/popupborder1">
+
+            <Button
+                android:id="@+id/CreateReplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Replay" />
+            
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+            
+            <Button
+                android:id="@+id/CreateSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/SaveSong" />
+            
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/CreateClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Close" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/CreatePopUp2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/popupborder1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/SongName"/>
+            <EditText
+                android:id="@+id/songName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/saveSong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/SaveSong"/>
+
+                <android.support.v4.widget.Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/saveSongClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Close"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/CreatePopUp3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/popupborder1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/lilSong0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:text="1"/>
+                        <RadioButton
+                            android:id="@+id/lilSong1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:text="2"/>
+                        <RadioButton
+                            android:id="@+id/lilSong2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:text="3"/>
+                        <RadioButton
+                            android:id="@+id/lilSong3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:text="4"/>
+                        <RadioButton
+                            android:id="@+id/lilSong4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:text="5"/>
+                        <RadioButton
+                            android:id="@+id/lilSong5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:text="6"/>
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                            <Button
+                                android:id="@+id/bigSong1"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="1"
+                                android:visibility="invisible"/>
+                            <Button
+                                android:id="@+id/bigSong2"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="2"
+                                android:visibility="invisible"/>
+                            <Button
+                                android:id="@+id/bigSong3"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="3"
+                                android:visibility="invisible"/>
+                            <Button
+                                android:id="@+id/bigSong4"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="4"
+                                android:visibility="invisible"/>
+                            <Button
+                                android:id="@+id/bigSong5"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="5"
+                                android:visibility="invisible"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                            <Button
+                                android:id="@+id/bigSong6"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="6"
+                                android:visibility="invisible"/>
+                            <Button
+                                android:id="@+id/bigSong7"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="7"
+                                android:visibility="invisible"/>
+                            <Button
+                                android:id="@+id/bigSong8"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="8"
+                                android:visibility="invisible"/>
+                            <Button
+                                android:id="@+id/bigSong9"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="9"
+                                android:visibility="invisible"/>
+                            <Button
+                                android:id="@+id/bigSong10"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:text="10"
+                                android:visibility="invisible"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/addToLilBig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add" />
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"></Space>
+                <Button
+                    android:id="@+id/removeFromLilBig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remove"/>
+
+            </LinearLayout>
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/playBigSong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Play" />
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"></Space>
+                <Button
+                    android:id="@+id/finishBigSong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finish"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/CreatePopUp4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/popupborder1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select 6 songs to keep"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/keepLilSong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Keep"/>
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/discardLilSong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="discard"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,221 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="coms309.songusoid.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/ic_profile_pictures">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--The Username, numSongs, and numUpvotes List-->
+
+            <TextView
+                android:id="@+id/ProfileUserText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:textColor="@android:color/background_dark"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/NumSongCreated"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:textColor="@android:color/background_dark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/NumUpVotes"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:textColor="@android:color/background_dark"
+                android:textSize="14sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <!--The Friend List-->
+
+            <Spinner
+                android:id="@+id/profileSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_weight="20"
+                android:fillViewport="true"
+                android:textColor="@android:color/background_dark">
+
+
+                <LinearLayout
+                    android:padding="10dp"
+                    android:id="@+id/scrollWindowFriend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </android.support.v4.widget.NestedScrollView>
+            <!--Change Password Field-->
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
+
+            <LinearLayout
+                android:layout_width="303dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.14" />
+
+                <Button
+                    android:id="@+id/changeButton"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.17"
+
+                    android:text="Change Password" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/CreatePopUp1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/popupborder1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/confirmOldPassword"
+                    android:layout_width="79dp"
+                    android:layout_height="match_parent"
+                    android:text="Old Password:"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/oldPasswordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/newPassword"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="New Password:"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/newPasswordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/confirmNewPassword"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="Confirm Password:"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/confirmNewPasswordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

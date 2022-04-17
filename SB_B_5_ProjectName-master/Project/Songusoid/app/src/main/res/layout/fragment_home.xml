@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="coms309.songusoid.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/ic_faded">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <Spinner
+                android:id="@+id/songDisplayedSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="0.27"/>
+            <Spinner
+                android:id="@+id/instrumentDisplayedSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="0.27"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/scrollWindow"
+            android:layout_width="wrap_content"
+            android:layout_height="412dp"
+            android:columnWidth="90dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="bottom|center"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/addFriend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Friend"/>
+            <Button
+                android:id="@+id/viewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- A separate linear layout which will hold a pop up menu after selecting a song
+    needs to be nested in a full screen relative layout in order to center on the screen-->
+    <RelativeLayout
+        android:id="@+id/HomePopUp1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/popupborder1">
+
+            <Button
+                android:id="@+id/HomePlaySong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Play" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/HomeShareSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Share" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/HomeUploadSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/HomeUpvoteSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upvote"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/HomeRemoveSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remove"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/HomeClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Close" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/HomePopUp2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/popupborder1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Friend Name"/>
+            <EditText
+                android:id="@+id/friendName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/addFriendFinal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add"/>
+            <Button
+                android:id="@+id/closeFriend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

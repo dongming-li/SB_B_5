@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="coms309.songusoid.DownloadFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/ic_downloadarrow">
+        <Spinner
+            android:id="@+id/instrumentDisplayedSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/scrollWindow"
+            android:layout_width="wrap_content"
+            android:layout_height="412dp"
+            android:columnWidth="90dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="bottom|center"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/prevDownloads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Previous"/>
+            <Button
+                android:id="@+id/nextDownloads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- A separate linear layout which will hold a pop up menu after selecting a song
+    needs to be nested in a full screen relative layout in order to center on the screen-->
+    <RelativeLayout
+        android:id="@+id/DownloadPopUp1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/popupborder1">
+
+            <Button
+                android:id="@+id/DownloadSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/DownloadCloseSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Close" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SQLStuff</string>
+    <string name="title_activity_display_contacts">DisplayContacts</string>
+    <string name="UserNm">Enter User Name</string>
+    <string name="passWrd">Enter Password</string>
+    <string name="submited">Submit</string>
+    <string name="displayProf">Display Profiles</string>
+    <string name="profileList">All Profiles</string>
+</resources>
